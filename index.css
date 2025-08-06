@@ -31,3 +31,42 @@ header>img {
 header h1 {
   font-weight: 400;
 }
+
+main {
+  padding: 1.88rem 1.88rem 0.63rem;
+}
+
+.add-ingredient-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.add-ingredient-form>input {
+  border-radius: 0.38rem;
+  border: 1px solid #d1d5db;
+  padding: 0.63rem 1.25rem;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  flex-grow: 1;
+  min-width: 9.38rem;
+  max-width: 25rem;
+}
+
+.add-ingredient-form>button {
+  font-family: Inter, sans-serif;
+  border-radius: 0.38rem;
+  border: none;
+  padding: 0.63rem 1.25rem;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  background-color: #141413;
+  color: #fafaf8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.add-ingredient-form>button::before {
+  content: "+";
+  margin-right: 0.38rem;
+}
