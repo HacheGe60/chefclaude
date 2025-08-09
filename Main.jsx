@@ -1,21 +1,26 @@
+import React from "react";
+
 export default function Main() {
-  const ingredients = ["Chicken", "Oregano", "Tomatoes"];
 
-  const ingredientsListItems = ingredients.map((ingredient) => {
-    return <li key={ingredient}>{ingredient}</li>;
-  });
+  const [ingredients, setIngredients] = React.useState([]);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+  const ingredientsListItems = ingredients.map(ingredient => (
+    <li key={ingredient}>{ingredient}</li>
+  ));
+
+  /**
+   * Challenge: use form action instead of onSubmit to
+   * handle the data from the form
+   */
+
+  function handleSubmit(formData) {
     const newIngredient = formData.get("ingredient");
-    ingredients.push(newIngredient);
-    console.log(ingredients);
+    setIngredients(prevIngredients => [...prevIngredients, newIngredient]);
   }
 
   return (
     <main>
-      <form className="add-ingredient-form" onSubmit={handleSubmit}>
+      <form action={handleSubmit} className="add-ingredient-form">
         <input
           type="text"
           placeholder="e.g. oregano"
