@@ -1,7 +1,7 @@
 export default function Main() {
   const ingredients = ["Chicken", "Oregano", "Tomatoes"];
 
-  const ingredientsList = ingredients.map((ingredient) => {
+  const ingredientsListItems = ingredients.map((ingredient) => {
     return <li key={ingredient}>{ingredient}</li>;
   });
 
@@ -25,7 +25,7 @@ export default function Main() {
         <button>Add ingredient</button>
       </form>
       <ul>
-        {ingredientsList}
+        {ingredientsListItems}
       </ul>
     </main>
   );
