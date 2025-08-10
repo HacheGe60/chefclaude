@@ -22,7 +22,7 @@ import { getRecipeFromChefClaude } from "./ai";
 
 export default function Main() {
   const [ingredients, setIngredients] = React.useState(
-    ['oregano', 'parmegiano', 'chicken', 'salsa']
+    []
   );
   const [recipeShown, setRecipeShown] = React.useState(false);
 
