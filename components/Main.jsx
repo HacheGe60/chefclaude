@@ -1,22 +1,20 @@
 import React from "react";
-import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
+import ClaudeRecipe from "./ClaudeRecipe";
 
 export default function Main() {
 
   const [ingredients, setIngredients] = React.useState(["all the main spices", "pasta", "ground beef", "tomato paste"]);
+
   const [recipeShown, setRecipeShown] = React.useState(false);
 
-  const ingredientsListItems = ingredients.map(ingredient => (
-    <li key={ingredient}>{ingredient}</li>
-  ));
 
   function addIngredient(formData) {
     const newIngredient = formData.get("ingredient");
     setIngredients(prevIngredients => [...prevIngredients, newIngredient]);
   }
 
-  function showRecipe() {
+  function toggleRecipeShown() {
     setRecipeShown(true);
   }
 
@@ -33,7 +31,7 @@ export default function Main() {
         <button>Add ingredient</button>
       </form>
       {ingredients.length ?
-        <IngredientsList show={showRecipe} items={ingredients} itemsList={ingredientsListItems} />
+        <IngredientsList toggleRecipeShown={toggleRecipeShown} ingredients={ingredients} />
         : null}
       {recipeShown && <ClaudeRecipe />}
     </main>
